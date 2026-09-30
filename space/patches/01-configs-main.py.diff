@@ -1,0 +1,71 @@
+--- /workspace/.ro/backup-20260930/configs/main.py	2026-09-30 20:39:54.928346118 +0000
++++ /venv/main/lib/python3.12/site-packages/invokeai/backend/model_manager/configs/main.py	2026-09-30 21:45:05.906474751 +0000
+@@ -1475,6 +1475,68 @@
+             raise NotAMatchError("state dict does not look like GGUF quantized")
+ 
+ 
++def _read_sdxl_gguf_header(path):
++    """Return (sdxl.* string KVs, tensor names) from a GGUF header.
++
++    Only the GGUF header is parsed -- no tensor data is read, so classification
++    stays cheap even for multi-GB files.
++    """
++    import gguf
++
++    reader = gguf.GGUFReader(str(path))
++    kvs: dict[str, str] = {}
++    for key, field in reader.fields.items():
++        if key.startswith("sdxl."):
++            try:
++                # STRING KVs store the value as the trailing uint8 part.
++                kvs[key] = bytes(field.parts[-1]).decode("utf-8")
++            except Exception:
++                continue
++    names = {t.name for t in reader.tensors}
++    return kvs, names
++
++
++class Main_GGUF_SDXL_Config(Checkpoint_Config_Base, Main_Config_Base, Config_Base):
++    """Model config for GGUF-quantized SDXL UNet models.
++
++    The GGUF is self-describing: converter-written string KVs carry the UNet
++    architecture JSON (``sdxl.unet_config``) and the path of the original
++    single-file checkpoint (``sdxl.source_checkpoint``) that provides the text
++    encoders + VAE, because a GGUF holds the UNet only.
++    """
++
++    base: Literal[BaseModelType.StableDiffusionXL] = Field(default=BaseModelType.StableDiffusionXL)
++    format: Literal[ModelFormat.GGUFQuantized] = Field(default=ModelFormat.GGUFQuantized)
++
++    source_checkpoint: str | None = Field(
++        default=None,
++        description="Path to the original single-file checkpoint providing text encoders and VAE.",
++    )
++    unet_config_json: str | None = Field(
++        default=None,
++        description="UNet2DConditionModel architecture JSON embedded in the GGUF header (sdxl.unet_config KV).",
++    )
++
++    @classmethod
++    def from_model_on_disk(cls, mod: ModelOnDisk, override_fields: dict[str, Any]) -> Self:
++        raise_if_not_file(mod)
++        raise_for_override_fields(cls, override_fields)
++
++        kvs, names = _read_sdxl_gguf_header(mod.path)
++        if "sdxl.unet_config" not in kvs or "sdxl.source_checkpoint" not in kvs:
++            raise NotAMatchError("gguf file lacks sdxl.* self-description KVs")
++        if not any(n.startswith("add_embedding.") for n in names):
++            # SDXL-specific module (addition_embed_type="text_time");
++            # SD1/2/FLUX/ZImage/Wan GGUFs never carry it.
++            raise NotAMatchError("gguf does not look like an SDXL UNet")
++
++        return cls(
++            **override_fields,
++            source_checkpoint=kvs["sdxl.source_checkpoint"],
++            unet_config_json=kvs["sdxl.unet_config"],
++        )
++
++
+ class Main_Diffusers_Ideogram4_Config(Diffusers_Config_Base, Main_Config_Base, Config_Base):
+     """Model config for Ideogram 4 diffusers models (nf4 / fp8 quantized).
+ 

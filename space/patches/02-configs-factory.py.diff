@@ -1,0 +1,18 @@
+--- /workspace/.ro/backup-20260930/configs/factory.py	2026-09-30 20:39:54.930346117 +0000
++++ /venv/main/lib/python3.12/site-packages/invokeai/backend/model_manager/configs/factory.py	2026-09-30 21:41:55.368698548 +0000
+@@ -100,6 +100,7 @@
+     Main_GGUF_QwenImage_Config,
+     Main_GGUF_Wan_Config,
+     Main_GGUF_ZImage_Config,
++    Main_GGUF_SDXL_Config,
+     Main_SDNQ_Diffusers_Flux2_Config,
+     Main_SDNQ_Diffusers_FLUX_Config,
+     Main_SDNQ_Diffusers_ZImage_Config,
+@@ -300,6 +301,7 @@
+         Annotated[Main_GGUF_QwenImage_Config, Main_GGUF_QwenImage_Config.get_tag()],
+         Annotated[Main_GGUF_Wan_Config, Main_GGUF_Wan_Config.get_tag()],
+         Annotated[Main_GGUF_ZImage_Config, Main_GGUF_ZImage_Config.get_tag()],
++        Annotated[Main_GGUF_SDXL_Config, Main_GGUF_SDXL_Config.get_tag()],
+         Annotated[Main_GGUF_Krea2_Config, Main_GGUF_Krea2_Config.get_tag()],
+         # IMPORTANT: FLUX.2 must be listed BEFORE FLUX.1 here. An ambiguous SDNQ transformer
+         # checkpoint (prefixed FLUX.2 keys) can look like a FLUX.1 main model, so FLUX.2 must get

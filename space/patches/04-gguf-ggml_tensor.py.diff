@@ -1,0 +1,27 @@
+--- /workspace/.ro/backup-20260930/ggml_tensor.py.bak	2026-09-07 00:09:26.000000000 +0000
++++ /venv/main/lib/python3.12/site-packages/invokeai/backend/quantization/gguf/ggml_tensor.py	2026-09-30 21:54:57.994648845 +0000
+@@ -187,10 +187,21 @@
+             new = gguf.quants.dequantize(self.quantized_data.cpu().numpy(), self._ggml_quantization_type)
+             return torch.from_numpy(new).to(self.quantized_data.device, dtype=self.compute_dtype)
+ 
++    _warned_ops: set = set()
++
+     @classmethod
+     def __torch_dispatch__(cls, func, types, args, kwargs):
+-        # We will likely hit cases here in the future where a new op is encountered that is not yet supported.
+-        # The new op simply needs to be added to the GGML_TENSOR_OP_TABLE.
++        # Ops with special handling (keep quantized data / explicit dequant).
+         if func in GGML_TENSOR_OP_TABLE:
+             return GGML_TENSOR_OP_TABLE[func](func, args, kwargs)
+-        return NotImplemented
++        # Fallback for everything else (aten.linear, conv2d, group_norm, SDPA,
++        # ...): dequantize GGMLTensor inputs and run the op on plain tensors.
++        # This matches the existing design -- view/slice/addmm already
++        # dequant-and-run -- and keeps new ops working without enumerating
++        # them. One warning per op name for visibility.
++        if func not in cls._warned_ops:
++            cls._warned_ops.add(func)
++            import sys as _sys
++
++            print(f"[GGMLTensor] dequant fallback for op: {func}", file=_sys.stderr, flush=True)
++        return dequantize_and_run(func, args, kwargs or {})
