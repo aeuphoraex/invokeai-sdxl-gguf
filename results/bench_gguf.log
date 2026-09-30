@@ -1,0 +1,25 @@
+nohup: ignoring input
+[model] SDXL UNet Q8 GGUF base=sdxl fmt=gguf_quantized key=2343be28-128e-45c6-b05b-49091548e22c
+[enqueue raw] {"queue_id": "default", "enqueued": 1, "requested": 1, "batch": {"batch_id": "7d18b9c6-da97-49a0-b669-abc66c4f73aa", "origin": null, "destination": null, "data": null, "graph": {"id": "bench-1790805370", "nodes": {"loader": {"id": "loader", "is_intermediate": false, "use_cache": true, "model": {"key": "2343be28-128e-45c6-b05b-49091548e22c", "hash": "blake3:c5c8d48b2c2916b42f58b7a7df197a325a276a57a
+[enqueue] batch=None
+{
+  "label": "gguf-q8",
+  "model": "SDXL UNet Q8 GGUF",
+  "model_key": "2343be28-128e-45c6-b05b-49091548e22c",
+  "format": "gguf_quantized",
+  "steps": 30,
+  "cfg": 7.0,
+  "size": "1024x1024",
+  "scheduler": "euler",
+  "status": "completed",
+  "wall_s": 17.52,
+  "compute_s": 15.51,
+  "item_id": 90,
+  "vram_used_before_mb": 4,
+  "vram_free_before_mb": 24123,
+  "vram_used_after_mb": 5172,
+  "vram_free_after_mb": 18955,
+  "error": null,
+  "error_msg": ""
+}
+[saved] /workspace/.ro/bench_gguf.json

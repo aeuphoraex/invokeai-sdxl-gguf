@@ -1,0 +1,168 @@
+nohup: ignoring input
+==============================================================================
+CROSS-FAMILY LATENT-WEIGHT CLUSTERING TEST v2 (DC-stripped)
+channels: ('fp_z', 'fp_abz', 'fp_npr')  cell=16x16  profile=32+32 bins
+pid=7210 start=19:58:19
+==============================================================================
+[SDXL] 20 tensors (seen 76) cpu=1.5s
+[SDXL] 40 tensors (seen 132) cpu=1.6s
+[SDXL] 60 tensors (seen 192) cpu=2.0s
+[SDXL] 80 tensors (seen 232) cpu=2.4s
+[SDXL] 100 tensors (seen 272) cpu=2.8s
+[SDXL] 120 tensors (seen 312) cpu=3.1s
+[SDXL] 140 tensors (seen 352) cpu=3.5s
+[SDXL] 160 tensors (seen 408) cpu=3.9s
+[SDXL] 180 tensors (seen 448) cpu=4.2s
+[SDXL] 200 tensors (seen 488) cpu=4.6s
+[SDXL] 220 tensors (seen 528) cpu=5.0s
+[HB] wall=    5.0s cpu=    5.1s rss=  1.8GiB
+[SDXL] 240 tensors (seen 568) cpu=5.4s
+[SDXL] 260 tensors (seen 628) cpu=5.8s
+[SDXL] 280 tensors (seen 668) cpu=6.2s
+[SDXL] 300 tensors (seen 708) cpu=6.5s
+[SDXL] 320 tensors (seen 748) cpu=6.9s
+[SDXL] 340 tensors (seen 788) cpu=7.3s
+[SDXL] 360 tensors (seen 860) cpu=7.7s
+[SDXL] 380 tensors (seen 900) cpu=8.0s
+[SDXL] 400 tensors (seen 940) cpu=8.4s
+[SDXL] DONE 400 tensors, roles={'self_k': 40, 'self_out': 40, 'self_q': 40, 'self_v': 40, 'cross_k': 40, 'cross_out': 40, 'cross_q': 40, 'cross_v': 40, 'mlp_gate': 40, 'mlp_down': 40} cpu=8.5s
+[WAN ] file opened, 1095 tensors
+[HB] wall=   10.0s cpu=   10.1s rss=  0.6GiB
+[HB] wall=   15.0s cpu=   15.1s rss=  1.0GiB
+[WAN ] kept 20 of 54/1095 seen (last=blocks.1.self_attn.v.weight) cpu=5.5s per-tensor=0.20s
+[HB] wall=   20.0s cpu=   20.0s rss=  1.4GiB
+[WAN ] kept 40 of 108/1095 seen (last=blocks.11.self_attn.v.weight) cpu=10.9s per-tensor=0.19s
+[HB] wall=   25.0s cpu=   25.0s rss=  1.9GiB
+[WAN ] kept 60 of 162/1095 seen (last=blocks.13.self_attn.v.weight) cpu=16.3s per-tensor=0.19s
+[HB] wall=   30.0s cpu=   30.0s rss=  2.4GiB
+[WAN ] kept 80 of 216/1095 seen (last=blocks.15.self_attn.v.weight) cpu=21.7s per-tensor=0.19s
+[HB] wall=   35.0s cpu=   35.0s rss=  2.6GiB
+[WAN ] kept 100 of 270/1095 seen (last=blocks.17.self_attn.v.weight) cpu=27.2s per-tensor=0.21s
+[HB] wall=   40.0s cpu=   40.0s rss=  3.0GiB
+[WAN ] kept 120 of 324/1095 seen (last=blocks.19.self_attn.v.weight) cpu=32.5s per-tensor=0.19s
+[HB] wall=   45.0s cpu=   45.0s rss=  3.5GiB
+[WAN ] kept 140 of 378/1095 seen (last=blocks.20.self_attn.v.weight) cpu=37.8s per-tensor=0.19s
+[HB] wall=   50.0s cpu=   50.0s rss=  3.8GiB
+[WAN ] kept 160 of 432/1095 seen (last=blocks.22.self_attn.v.weight) cpu=43.1s per-tensor=0.19s
+[HB] wall=   55.0s cpu=   55.0s rss=  4.2GiB
+[WAN ] kept 180 of 486/1095 seen (last=blocks.24.self_attn.v.weight) cpu=48.3s per-tensor=0.19s
+[HB] wall=   60.0s cpu=   60.0s rss=  4.9GiB
+[WAN ] kept 200 of 540/1095 seen (last=blocks.26.self_attn.v.weight) cpu=53.9s per-tensor=0.19s
+[HB] wall=   65.0s cpu=   65.0s rss=  5.4GiB
+[WAN ] kept 220 of 594/1095 seen (last=blocks.28.self_attn.v.weight) cpu=59.2s per-tensor=0.20s
+[HB] wall=   70.0s cpu=   70.0s rss=  5.4GiB
+[WAN ] kept 240 of 648/1095 seen (last=blocks.3.self_attn.v.weight) cpu=64.6s per-tensor=0.20s
+[HB] wall=   75.0s cpu=   75.0s rss=  5.8GiB
+[HB] wall=   80.0s cpu=   80.0s rss=  6.2GiB
+[WAN ] kept 260 of 702/1095 seen (last=blocks.31.self_attn.v.weight) cpu=70.1s per-tensor=0.20s
+[HB] wall=   85.0s cpu=   85.0s rss=  6.6GiB
+[WAN ] kept 280 of 756/1095 seen (last=blocks.33.self_attn.v.weight) cpu=75.5s per-tensor=0.19s
+[HB] wall=   90.0s cpu=   90.0s rss=  7.0GiB
+[WAN ] kept 300 of 810/1095 seen (last=blocks.35.self_attn.v.weight) cpu=80.9s per-tensor=0.20s
+[HB] wall=   95.0s cpu=   95.0s rss=  8.0GiB
+[WAN ] kept 320 of 864/1095 seen (last=blocks.37.self_attn.v.weight) cpu=85.8s per-tensor=0.17s
+[HB] wall=  100.0s cpu=  100.0s rss=  8.0GiB
+[WAN ] kept 340 of 918/1095 seen (last=blocks.39.self_attn.v.weight) cpu=90.6s per-tensor=0.17s
+[HB] wall=  105.0s cpu=  105.0s rss=  8.3GiB
+[WAN ] kept 360 of 972/1095 seen (last=blocks.5.self_attn.v.weight) cpu=95.4s per-tensor=0.18s
+[HB] wall=  110.0s cpu=  110.0s rss=  8.9GiB
+[WAN ] kept 380 of 1026/1095 seen (last=blocks.7.self_attn.v.weight) cpu=100.1s per-tensor=0.17s
+[WAN ] kept 400 of 1080/1095 seen (last=blocks.9.self_attn.v.weight) cpu=104.9s per-tensor=0.17s
+[WAN ] DONE 400 tensors (400 dequantized, 52.3 GiB processed), roles={'cross_k': 40, 'cross_out': 40, 'cross_q': 40, 'cross_v': 40, 'mlp_gate': 40, 'mlp_down': 40, 'self_k': 40, 'self_out': 40, 'self_q': 40, 'self_v': 40} cpu=105.0s
+[HB] wall=  115.0s cpu=  115.0s rss=  8.3GiB
+
+  SDXL: 400 tensors  WAN: 400 tensors  shared roles (10): ['cross_k', 'cross_out', 'cross_q', 'cross_v', 'mlp_down', 'mlp_gate', 'self_k', 'self_out', 'self_q', 'self_v']
+
+  channel         same      diff       sep   kNN fwd   kNN rev  baseline
+  fp_z         -0.0020   +0.0020   -0.0040     10.8%     12.5%     10.0%
+  fp_abz       +0.0008   +0.0010   -0.0002     11.0%      5.8%     10.0%
+  fp_npr       +0.1939   -0.0208   +0.2147     32.2%      3.0%     10.0%
+  FUSION       +0.0642   -0.0060   +0.0702     33.5%      5.0%     10.0%
+
+  per-role mean cosine (fp_npr):
+    cross_k      -0.0321
+    cross_out    +0.0086
+    cross_q      +0.0165
+    cross_v      -0.0322
+    mlp_down     +0.9876
+    mlp_gate     +0.9971
+    self_k       -0.0010
+    self_out     -0.0073
+    self_q       +0.0006
+    self_v       +0.0011
+
+------------------------------------------------------------------------------
+CONTROL (randn tensors, identical shapes) — must fall to chance:
+[HB] wall=  120.0s cpu=  120.5s rss=  0.7GiB
+[HB] wall=  125.0s cpu=  125.5s rss=  0.7GiB
+[HB] wall=  130.0s cpu=  130.5s rss=  0.7GiB
+[HB] wall=  135.0s cpu=  135.5s rss=  0.8GiB
+[HB] wall=  140.0s cpu=  140.5s rss=  0.8GiB
+[HB] wall=  145.0s cpu=  145.5s rss=  0.9GiB
+[HB] wall=  150.0s cpu=  150.5s rss=  0.9GiB
+[HB] wall=  155.0s cpu=  155.5s rss=  1.0GiB
+[HB] wall=  160.0s cpu=  160.5s rss=  0.9GiB
+[HB] wall=  165.0s cpu=  165.5s rss=  0.8GiB
+[HB] wall=  170.0s cpu=  170.5s rss=  0.8GiB
+[HB] wall=  175.0s cpu=  175.5s rss=  0.9GiB
+[HB] wall=  180.0s cpu=  180.5s rss=  1.0GiB
+[HB] wall=  185.0s cpu=  185.5s rss=  1.1GiB
+[HB] wall=  190.0s cpu=  190.5s rss=  1.4GiB
+[HB] wall=  195.0s cpu=  195.5s rss=  1.3GiB
+[HB] wall=  200.0s cpu=  200.5s rss=  1.2GiB
+[HB] wall=  205.0s cpu=  205.5s rss=  1.1GiB
+[HB] wall=  210.0s cpu=  210.5s rss=  1.0GiB
+[HB] wall=  215.0s cpu=  215.5s rss=  0.9GiB
+[HB] wall=  220.0s cpu=  220.5s rss=  1.2GiB
+[HB] wall=  225.0s cpu=  225.5s rss=  1.0GiB
+[HB] wall=  230.0s cpu=  230.5s rss=  0.9GiB
+[HB] wall=  235.0s cpu=  235.5s rss=  1.0GiB
+[HB] wall=  240.0s cpu=  240.5s rss=  0.8GiB
+[HB] wall=  245.0s cpu=  245.5s rss=  0.8GiB
+[HB] wall=  250.0s cpu=  250.5s rss=  0.9GiB
+[HB] wall=  255.0s cpu=  255.5s rss=  0.8GiB
+[HB] wall=  260.0s cpu=  260.5s rss=  0.8GiB
+[HB] wall=  265.0s cpu=  265.5s rss=  0.9GiB
+[HB] wall=  270.0s cpu=  270.5s rss=  0.8GiB
+[HB] wall=  275.0s cpu=  275.5s rss=  0.9GiB
+[HB] wall=  280.0s cpu=  280.5s rss=  0.9GiB
+[HB] wall=  285.0s cpu=  285.5s rss=  1.0GiB
+[HB] wall=  290.0s cpu=  290.5s rss=  0.8GiB
+[HB] wall=  295.0s cpu=  295.5s rss=  0.9GiB
+[HB] wall=  300.0s cpu=  300.5s rss=  1.2GiB
+[HB] wall=  305.0s cpu=  305.5s rss=  1.0GiB
+[HB] wall=  310.0s cpu=  310.5s rss=  0.9GiB
+[HB] wall=  315.0s cpu=  315.5s rss=  1.3GiB
+[HB] wall=  320.0s cpu=  320.5s rss=  1.1GiB
+[HB] wall=  325.0s cpu=  325.5s rss=  1.0GiB
+[HB] wall=  330.0s cpu=  330.5s rss=  1.0GiB
+[HB] wall=  335.0s cpu=  335.5s rss=  0.9GiB
+[HB] wall=  340.0s cpu=  340.5s rss=  1.1GiB
+
+  SDXL-rnd: 400 tensors  WAN-rnd: 400 tensors  shared roles (10): ['cross_k', 'cross_out', 'cross_q', 'cross_v', 'mlp_down', 'mlp_gate', 'self_k', 'self_out', 'self_q', 'self_v']
+
+  channel         same      diff       sep   kNN fwd   kNN rev  baseline
+  fp_z         -0.0001   +0.0001   -0.0002      9.0%     13.5%     10.0%
+  fp_abz       +0.0002   -0.0002   +0.0004     11.0%     11.2%     10.0%
+  fp_npr       +0.1995   -0.0224   +0.2219     26.0%      5.8%     10.0%
+  FUSION       +0.0665   -0.0075   +0.0741     26.5%      7.0%     10.0%
+
+  per-role mean cosine (fp_npr):
+    cross_k      +0.0003
+    cross_out    +0.0024
+    cross_q      -0.0006
+    cross_v      +0.0002
+    mlp_down     +1.0000
+    mlp_gate     +1.0000
+    self_k       -0.0013
+    self_out     -0.0021
+    self_q       -0.0053
+    self_v       +0.0011
+
+==============================================================================
+  fusion separation : +0.0702   kNN 33.5%/5.0%  baseline 10.0%
+  control separation: +0.0741   kNN 26.5%/7.0%
+VERDICT: NO ROLE SIGNAL (at or below control)
+  real sep +0.0702 vs control +0.0741 | best channel fp_npr
+COMPUTE COMPLETE cpu=344.2s wall=20:04:02
+==============================================================================

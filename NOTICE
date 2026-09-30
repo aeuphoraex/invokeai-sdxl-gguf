@@ -1,0 +1,12 @@
+InvokeAI-SDXL-GGUF
+Copyright 2026 AEUPH
+
+This product includes software developed by the InvokeAI project
+(https://github.com/invoke-ai/InvokeAI), licensed under the Apache
+License, Version 2.0.
+
+MODIFICATIONS: the patches/ directory contains unified diffs that modify
+four InvokeAI 6.14.1 source files (see patches/MODIFICATIONS.md). All
+modified files carry the original Apache-2.0 copyright headers; the
+changes are additionally documented in README.md and in each diff's
+header. No changes were made to the Apache-2.0 license text itself.

@@ -1,0 +1,20 @@
+{
+  "label": "fp8_storage_warm",
+  "model": "pornworksHardcoreFantasy_v04",
+  "model_key": "332a6e1c-9364-4c5e-9dd4-b1eb725b147c",
+  "format": "checkpoint",
+  "steps": 30,
+  "cfg": 7.0,
+  "size": "1024x1024",
+  "scheduler": "euler",
+  "status": "completed",
+  "wall_s": 11.18,
+  "compute_s": 9.76,
+  "item_id": 88,
+  "vram_used_before_mb": 15106,
+  "vram_free_before_mb": 9021,
+  "vram_used_after_mb": 15412,
+  "vram_free_after_mb": 8715,
+  "error": null,
+  "error_msg": ""
+}

@@ -1,0 +1,33 @@
+nohup: ignoring input
+[load] /workspace/invokeai/models/332a6e1c-9364-4c5e-9dd4-b1eb725b147c/pornworksHardcoreFantasy_v04.safetensors
+Fetching 17 files:   0%|          | 0/17 [00:00<?, ?it/s]Fetching 17 files: 100%|██████████| 17/17 [00:00<00:00, 832.13it/s]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:00, 12.92it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:00<00:00, 15.52it/s]There are modules in UNet2DConditionModel that should be kept in float32: []. Casting directly with `to()` can lead to inconsistent results; set `torch_dtype` in `from_pretrained()` instead to keep these modules in float32.
+There are modules in AutoencoderKL that should be kept in float32: []. Casting directly with `to()` can lead to inconsistent results; set `torch_dtype` in `from_pretrained()` instead to keep these modules in float32.
+Loading pipeline components...: 100%|██████████| 7/7 [00:00<00:00, 10.09it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:00<00:00, 11.08it/s]
+[unet] 1680 diffusers-format tensors
+[quant] Q8_0
+[quant] breakdown: {'F16': 52, 'Q8_0': 1628}
+[quant] fallback: conv_in.weight (320, 4, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (320, 4, 3, 3) to Q8_0
+[quant] fallback: down_blocks.0.resnets.0.conv1.weight (320, 320, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (320, 320, 3, 3) to Q8_0
+[quant] fallback: down_blocks.0.resnets.0.conv2.weight (320, 320, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (320, 320, 3, 3) to Q8_0
+[quant] fallback: down_blocks.0.resnets.1.conv1.weight (320, 320, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (320, 320, 3, 3) to Q8_0
+[quant] fallback: down_blocks.0.resnets.1.conv2.weight (320, 320, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (320, 320, 3, 3) to Q8_0
+[quant] fallback: down_blocks.0.downsamplers.0.conv.weight (320, 320, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (320, 320, 3, 3) to Q8_0
+[quant] fallback: down_blocks.1.resnets.0.conv1.weight (640, 320, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (640, 320, 3, 3) to Q8_0
+[quant] fallback: down_blocks.1.resnets.0.conv2.weight (640, 640, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (640, 640, 3, 3) to Q8_0
+[quant] fallback: down_blocks.1.resnets.0.conv_shortcut.weight (640, 320, 1, 1) -> Q8_0: QuantError: Can't quantize tensor with shape (640, 320, 1, 1) to Q8_0
+[quant] fallback: down_blocks.1.resnets.1.conv1.weight (640, 640, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (640, 640, 3, 3) to Q8_0
+[quant] fallback: down_blocks.1.resnets.1.conv2.weight (640, 640, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (640, 640, 3, 3) to Q8_0
+[quant] fallback: down_blocks.1.downsamplers.0.conv.weight (640, 640, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (640, 640, 3, 3) to Q8_0
+[quant] fallback: down_blocks.2.resnets.0.conv1.weight (1280, 640, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (1280, 640, 3, 3) to Q8_0
+[quant] fallback: down_blocks.2.resnets.0.conv2.weight (1280, 1280, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (1280, 1280, 3, 3) to Q8_0
+[quant] fallback: down_blocks.2.resnets.0.conv_shortcut.weight (1280, 640, 1, 1) -> Q8_0: QuantError: Can't quantize tensor with shape (1280, 640, 1, 1) to Q8_0
+[quant] fallback: down_blocks.2.resnets.1.conv1.weight (1280, 1280, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (1280, 1280, 3, 3) to Q8_0
+[quant] fallback: down_blocks.2.resnets.1.conv2.weight (1280, 1280, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (1280, 1280, 3, 3) to Q8_0
+[quant] fallback: up_blocks.0.resnets.0.conv1.weight (1280, 2560, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (1280, 2560, 3, 3) to Q8_0
+[quant] fallback: up_blocks.0.resnets.0.conv2.weight (1280, 1280, 3, 3) -> Q8_0: QuantError: Can't quantize tensor with shape (1280, 1280, 3, 3) to Q8_0
+[quant] fallback: up_blocks.0.resnets.0.conv_shortcut.weight (1280, 2560, 1, 1) -> Q8_0: QuantError: Can't quantize tensor with shape (1280, 2560, 1, 1) to Q8_0
+[done] /workspace/gguf/sdxl-unet-q8.gguf
+       tensors=1680 params=2,567,463,684
+       src=6.94 GB  dst=3040.5 MB
+       ratio=0.438

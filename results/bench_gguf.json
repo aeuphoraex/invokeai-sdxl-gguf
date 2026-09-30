@@ -1,0 +1,20 @@
+{
+  "label": "gguf-q8",
+  "model": "SDXL UNet Q8 GGUF",
+  "model_key": "2343be28-128e-45c6-b05b-49091548e22c",
+  "format": "gguf_quantized",
+  "steps": 30,
+  "cfg": 7.0,
+  "size": "1024x1024",
+  "scheduler": "euler",
+  "status": "completed",
+  "wall_s": 17.52,
+  "compute_s": 15.51,
+  "item_id": 90,
+  "vram_used_before_mb": 4,
+  "vram_free_before_mb": 24123,
+  "vram_used_after_mb": 5172,
+  "vram_free_after_mb": 18955,
+  "error": null,
+  "error_msg": ""
+}
