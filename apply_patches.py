@@ -60,12 +60,15 @@ def main() -> int:
     a = ap.parse_args()
 
     sp = find_site_packages(a.site_packages)
+    pkg = sp / "invokeai"
+    if not pkg.is_dir():
+        sys.exit(f"{pkg} not found -- is invokeai installed here?")
     print(f"site-packages: {sp}")
     orig = PATCH_DIR / "orig"
     failures = 0
 
     for diff_name, rel, marker in PATCHES:
-        target = sp / rel
+        target = pkg / rel
         diff = PATCH_DIR / diff_name
         if not diff.is_file():
             print(f"MISSING DIFF: {diff}")
@@ -112,7 +115,7 @@ def main() -> int:
     # Verify: py_compile every touched file, then registry smoke test.
     if not a.dry_run:
         for _, rel, _ in PATCHES:
-            subprocess.run([sys.executable, "-m", "py_compile", str(sp / rel)], check=True)
+            subprocess.run([sys.executable, "-m", "py_compile", str(pkg / rel)], check=True)
         print("py_compile OK")
         from invokeai.backend.model_manager.configs.main import Main_GGUF_SDXL_Config
         from invokeai.backend.model_manager.load.model_loader_registry import ModelLoaderRegistry
